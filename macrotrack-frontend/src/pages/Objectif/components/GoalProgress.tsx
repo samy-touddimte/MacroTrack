@@ -17,11 +17,11 @@ const GoalProgress: React.FC<GoalProgressProps> = ({
 }) => {
   return (
     <div>
-      <h3 className="font-body text-sm font-bold text-text-muted uppercase tracking-wide mb-4 invisible">
+      <h3 className="font-body text-sm font-normal text-text-muted uppercase tracking-wide mb-4 invisible">
         CALORIES RESTANTES
       </h3>
-      <div className="card bg-[#F4F4F4] rounded-2xl p-5 flex flex-col gap-4">
-        <div className="flex justify-between items-center pb-4">
+      <div className="card bg-[#F4F4F4] rounded-2xl p-4 flex flex-col justify-between h-[115px]">
+        <div className="flex justify-between items-center">
         <span className="font-body text-sm font-bold text-black">{weightRemaining} kg restants</span>
         <span className="font-body text-sm text-text-muted">{weightAlreadyLost} kg perdus</span>
       </div>

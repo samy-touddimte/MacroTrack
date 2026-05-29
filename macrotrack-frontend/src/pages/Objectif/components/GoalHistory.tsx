@@ -15,7 +15,7 @@ const GoalHistory: React.FC<GoalHistoryProps> = ({ history, deleteMutation }) =>
 
   return (
     <div>
-      <h3 className="font-body text-sm font-bold text-text-muted uppercase tracking-wide mb-4">
+      <h3 className="font-body text-sm font-normal text-text-muted uppercase tracking-wide mb-4">
         HISTORIQUE DES OBJECTIFS
       </h3>
       <div className="flex flex-col gap-3">
@@ -25,7 +25,7 @@ const GoalHistory: React.FC<GoalHistoryProps> = ({ history, deleteMutation }) =>
           const startDateLabel = format(new Date(hGoal.startDate), 'd MMMM yyyy', { locale: fr });
           
           return (
-            <div key={hGoal.id} className="card bg-[#F4F4F4] rounded-2xl p-4 flex flex-col gap-2">
+            <div key={hGoal.id} className="card bg-[#F4F4F4] rounded-2xl p-4 flex flex-col justify-between h-[115px]">
               <div className="flex justify-between items-start">
                 <span className="font-body text-[11px] text-text-muted">
                   Début : {startDateLabel} · {rateLabel}
