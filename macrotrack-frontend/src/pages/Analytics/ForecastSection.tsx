@@ -84,7 +84,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
 
   return (
     <section className="mt-14">
-      <h2 className="font-display text-[1.2rem] text-text-muted tracking-widest mb-6">
+      <h2 className="font-display text-base md:text-[1.2rem] text-text-muted tracking-widest mb-4 md:mb-6">
         PRÉVISIONS
       </h2>
       <div className="bg-gray-light rounded-2xl p-6 relative">
@@ -99,7 +99,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
             <p className="text-[0.65rem] text-text-muted uppercase tracking-widest m-0 mb-0.5 font-bold">
               Date estimée (Idéale)
             </p>
-            <p className="font-display text-[2rem] text-gray-dark m-0 leading-none">
+            <p className="font-display text-2xl md:text-[2rem] text-gray-dark m-0 leading-none">
               {(() => {
                 if (forecastMeta.depasseDeuxAns) return 'plus de 2 ans';
                 if (forecastMeta.dateAtteinte) return format(new Date(forecastMeta.dateAtteinte), 'd MMMM yyyy', { locale: fr });
@@ -112,7 +112,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
               <p className="text-[0.65rem] text-text-muted uppercase tracking-widest m-0 mb-0.5 font-bold">
                 Date estimée (Empirique)
               </p>
-              <p className="font-display text-[2rem] text-gray-dark m-0 leading-none">
+              <p className="font-display text-2xl md:text-[2rem] text-gray-dark m-0 leading-none">
                 {(() => {
                   if (forecastMeta.depasseDeuxAns) return 'plus de 2 ans';
                   if (forecastData.empiricalDate) return format(new Date(forecastData.empiricalDate), 'd MMMM yyyy', { locale: fr });

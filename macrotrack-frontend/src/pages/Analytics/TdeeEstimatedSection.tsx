@@ -31,7 +31,7 @@ export const TdeeEstimatedSection: React.FC<TdeeEstimatedSectionProps> = ({
 
   return (
     <section>
-      <h2 className="font-display text-[1.2rem] text-text-muted tracking-widest mb-6">
+      <h2 className="font-display text-base md:text-[1.2rem] text-text-muted tracking-widest mb-4 md:mb-6">
         TDEE ESTIMÉ
       </h2>
       <div className="bg-gray-light rounded-2xl p-6 relative">

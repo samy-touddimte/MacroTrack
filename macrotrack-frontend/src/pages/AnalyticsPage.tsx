@@ -29,7 +29,7 @@ const AnalyticsPage = () => {
   return (
     <main className="bg-white min-h-screen pb-32 border-t-0">
       <div className="max-w-[800px] mx-auto py-8 px-5">
-        <h1 className="font-display text-[3.5rem] text-gray-dark mb-12">
+        <h1 className="font-display text-3xl md:text-[3.5rem] text-gray-dark mb-6 md:mb-12">
           ANALYSES
         </h1>
 
