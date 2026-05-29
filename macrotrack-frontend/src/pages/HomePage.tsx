@@ -6,7 +6,6 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 const LogoPlaceholder = () => (
   <div className="logo-placeholder min-w-[200px] min-h-[200px] flex items-center justify-end w-full">
     <span className="hero-title text-black text-right text-2xl leading-tight normal-case">
-      <span className="lowercase">par</span> <span className="uppercase">SAMY TOUDDIMTE</span>
     </span>
   </div>
 );
@@ -135,7 +134,7 @@ const HomePage = () => {
           <div className="footer-content">
             <div className="footer-brand">MACROTRACK</div>
             <div className="flex items-center gap-8">
-              <span className="text-[0.9rem] text-white/90 font-body">par Samy Touddimte</span>
+
               <SocialLinks color="white" />
             </div>
           </div>
