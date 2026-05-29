@@ -16,8 +16,12 @@ const GoalProgress: React.FC<GoalProgressProps> = ({
   estimatedDateFromApi
 }) => {
   return (
-    <div className="card bg-[#F4F4F4] rounded-2xl p-5 mt-6 flex flex-col gap-4">
-      <div className="flex justify-between items-center pb-4">
+    <div>
+      <h3 className="font-body text-xs text-text-muted uppercase tracking-wide mb-4 invisible">
+        CALORIES RESTANTES
+      </h3>
+      <div className="card bg-[#F4F4F4] rounded-2xl p-5 flex flex-col gap-4 h-full">
+        <div className="flex justify-between items-center pb-4">
         <span className="font-body text-sm font-bold text-black">{weightRemaining} kg restants</span>
         <span className="font-body text-sm text-text-muted">{weightAlreadyLost} kg perdus</span>
       </div>
@@ -39,6 +43,7 @@ const GoalProgress: React.FC<GoalProgressProps> = ({
           <span className="text-[11px] text-text-muted uppercase tracking-wide">objectif estimé</span>
         </div>
       </div>
+    </div>
     </div>
   );
 };

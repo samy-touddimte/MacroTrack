@@ -14,7 +14,7 @@ const GoalHistory: React.FC<GoalHistoryProps> = ({ history, deleteMutation }) =>
   if (history.length === 0) return null;
 
   return (
-    <div className="mt-10">
+    <div>
       <h3 className="font-body text-xs text-text-muted uppercase tracking-wide mb-4">
         HISTORIQUE DES OBJECTIFS
       </h3>
