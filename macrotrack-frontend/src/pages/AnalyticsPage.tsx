@@ -29,7 +29,7 @@ const AnalyticsPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-32 border-t-0">
-      <div className="max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5">
+      <div className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12">
         <PageTitle title="ANALYSES" />
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mt-6 mb-8">

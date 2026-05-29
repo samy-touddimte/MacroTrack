@@ -64,7 +64,7 @@ const ObjectifPage = () => {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5 text-black">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12 text-black">
         <PageTitle title="MON OBJECTIF" />
 
         <div className="mb-8">

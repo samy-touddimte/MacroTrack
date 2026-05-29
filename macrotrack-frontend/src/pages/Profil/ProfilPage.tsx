@@ -57,7 +57,7 @@ const ProfilPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-24">
-      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5 text-black">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12 text-black">
         <PageTitle title="MON PROFIL" />
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-12 mt-6">

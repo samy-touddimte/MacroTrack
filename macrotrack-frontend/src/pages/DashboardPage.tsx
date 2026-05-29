@@ -50,7 +50,7 @@ function DashboardPage() {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-4">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-4 xl:px-12">
         <PageTitle 
           title="DASHBOARD" 
           dateSubtitle={format(new Date(), 'EEEE, d MMMM', { locale: fr })} 
