@@ -8,29 +8,29 @@ const CreditsPage = () => {
         <PageTitle title="CRÉDITS" />
 
         <div className="flex flex-col w-full mt-6">
-          {/* Introduction */}
-          <div className="pl-6 border-l-4 border-primary mb-12 mt-2 max-w-[1200px]">
-            <div className="text-[1.1rem] text-[#333333] leading-relaxed">
-              <p className="m-0 mb-4">
-                <strong>MacroTrack</strong> est un projet personnel qui me tient particulièrement à cœur. Je voulais commencer une sèche sans perdre le peu de muscle que j’avais réussi à obtenir — ce qui arrive facilement quand on calcule mal son déficit calorique.
-              </p>
-              <p className="m-0 mb-4">
-                Pour cela, je devais être le plus scientifique et méthodique possible dans mon alimentation et mon entraînement, mais j’étais aussi trop fainéant pour recalculer à la main, chaque semaine, mon nouveau déficit calorique en fonction de ma perte de poids.
-              </p>
-              <p className="m-0 mb-4">
-                Après des jours de recherche, je n’ai trouvé qu’une seule application sur le marché qui répondait pleinement à mes exigences, qui était à jour par rapport à la littérature scientifique dans ses méthodes, et qui faisait les calculs à ma place. Mais elle coûte 15 € par mois… et je ne suis qu’un pauvre étudiant.
-              </p>
-              <p className="m-0">
-                C’est pourquoi j’ai conçu MacroTrack : une alternative ouverte, que j’espère tout aussi performante, mais sans la facturation mensuelle.
-              </p>
-            </div>
-          </div>
-
-          {/* Algorithme et Architecture */}
-          <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-14">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mb-14">
             
-            {/* L'algorithme */}
-            <div className="xl:col-span-2">
+            {/* Colonne de Gauche : Intro + Algorithme */}
+            <div className="flex flex-col gap-10">
+              {/* Introduction */}
+              <div className="pl-6 border-l-4 border-primary mt-2">
+                <div className="text-[1.1rem] text-[#333333] leading-relaxed">
+                  <p className="m-0 mb-4">
+                    <strong>MacroTrack</strong> est un projet personnel qui me tient particulièrement à cœur. Je voulais commencer une sèche sans perdre le peu de muscle que j’avais réussi à obtenir — ce qui arrive facilement quand on calcule mal son déficit calorique.
+                  </p>
+                  <p className="m-0 mb-4">
+                    Pour cela, je devais être le plus scientifique et méthodique possible dans mon alimentation et mon entraînement, mais j’étais aussi trop fainéant pour recalculer à la main, chaque semaine, mon nouveau déficit calorique en fonction de ma perte de poids.
+                  </p>
+                  <p className="m-0 mb-4">
+                    Après des jours de recherche, je n’ai trouvé qu’une seule application sur le marché qui répondait pleinement à mes exigences, qui était à jour par rapport à la littérature scientifique dans ses méthodes, et qui faisait les calculs à ma place. Mais elle coûte 15 € par mois… et je ne suis qu’un pauvre étudiant.
+                  </p>
+                  <p className="m-0">
+                    C’est pourquoi j’ai conçu MacroTrack : une alternative ouverte, que j’espère tout aussi performante, mais sans la facturation mensuelle.
+                  </p>
+                </div>
+              </div>
+
+              {/* L'algorithme */}
               <div className="card h-full mb-0">
                 <h2 className="font-display text-[1.6rem] tracking-wide mb-8 text-black">
                   L'ALGORITHME MÉTABOLIQUE (EWMA)
@@ -81,8 +81,8 @@ const CreditsPage = () => {
               </div>
             </div>
 
-            {/* Stack technique */}
-            <div className="xl:col-span-1 flex flex-col gap-8">
+            {/* Colonne de Droite : Stack technique */}
+            <div className="flex flex-col gap-8">
               {/* Backend */}
               <div className="card flex flex-col">
                 <h3 className="font-display text-[1.3rem] tracking-wide mb-5 text-primary">
