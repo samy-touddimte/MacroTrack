@@ -3,7 +3,7 @@
 # =========================
 .env
 .env.local
-macrotrack-frontend/.env
+!macrotrack-frontend/.env
 
 # =========================
 # Backend (Java / Spring Boot)
@@ -44,3 +44,10 @@ macrotrack-backend/scratch/
 .vscode/
 *.swp
 *.swo
+
+# =========================
+# Backup / Fichiers temporaires
+# =========================
+*.bak
+*.old
+*.tmp
