@@ -97,14 +97,14 @@ const ObjectifPage = () => {
 
           {/* Right Column */}
           <div className="flex flex-col gap-6">
-            <GoalActions 
-              goalExists={!!goal}
-              onOpenModal={openModal}
-            />
-
             <GoalHistory 
               history={history}
               deleteMutation={deleteMutation}
+            />
+
+            <GoalActions 
+              goalExists={!!goal}
+              onOpenModal={openModal}
             />
           </div>
         </div>
