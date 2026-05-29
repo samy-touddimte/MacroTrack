@@ -15,7 +15,7 @@ const GoalHistory: React.FC<GoalHistoryProps> = ({ history, deleteMutation }) =>
 
   return (
     <div>
-      <h3 className="font-body text-xs text-text-muted uppercase tracking-wide mb-4">
+      <h3 className="font-body text-sm font-bold text-text-muted uppercase tracking-wide mb-4">
         HISTORIQUE DES OBJECTIFS
       </h3>
       <div className="flex flex-col gap-3">
