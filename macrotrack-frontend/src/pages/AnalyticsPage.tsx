@@ -32,29 +32,35 @@ const AnalyticsPage = () => {
       <div className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12">
         <PageTitle title="ANALYSES" />
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mt-6">
-          <TdeeEstimatedSection
-            tdeeDataSep={tdeeDataSep}
-            tdeePeriod={tdeePeriod}
-            setTdeePeriod={setTdeePeriod}
-            tLoading={tLoading}
-            tError={tError}
-            tStart={tStart}
-            tEnd={tEnd}
-          />
+        <div className="flex flex-wrap justify-center gap-8 xl:gap-12 mt-6">
+          <div className="w-full xl:w-[calc(50%-1.5rem)]">
+            <TdeeEstimatedSection
+              tdeeDataSep={tdeeDataSep}
+              tdeePeriod={tdeePeriod}
+              setTdeePeriod={setTdeePeriod}
+              tLoading={tLoading}
+              tError={tError}
+              tStart={tStart}
+              tEnd={tEnd}
+            />
+          </div>
 
-          <ForecastSection forecastData={forecastData} />
+          <div className="w-full xl:w-[calc(50%-1.5rem)]">
+            <WeightTrendSection
+              weightTrend={weightTrend}
+              weightPeriod={weightPeriod}
+              setWeightPeriod={setWeightPeriod}
+              wLoading={wLoading}
+              wError={wError}
+              wStart={wStart}
+              wEnd={wEnd}
+              goal={goal}
+            />
+          </div>
 
-          <WeightTrendSection
-            weightTrend={weightTrend}
-            weightPeriod={weightPeriod}
-            setWeightPeriod={setWeightPeriod}
-            wLoading={wLoading}
-            wError={wError}
-            wStart={wStart}
-            wEnd={wEnd}
-            goal={goal}
-          />
+          <div className="w-full xl:w-[calc(50%-1.5rem)]">
+            <ForecastSection forecastData={forecastData} />
+          </div>
         </div>
       </div>
     </main>
