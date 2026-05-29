@@ -4,11 +4,12 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 const CreditsPage = () => {
   return (
     <main className="bg-white min-h-screen pb-24">
-      <section className="container section max-w-[800px] mx-auto py-8 px-5 text-black">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12 text-black">
         <PageTitle title="CRÉDITS" />
 
-        {/* Introduction */}
-        <div className="pl-6 border-l-4 border-primary mb-12 mt-8">
+        <div className="flex flex-col max-w-[800px] mx-auto mt-6">
+          {/* Introduction */}
+          <div className="pl-6 border-l-4 border-primary mb-12 mt-2">
           <div className="text-[1.1rem] text-[#333333] leading-relaxed">
             <p className="m-0 mb-4">
               <strong>MacroTrack</strong> est un projet personnel qui me tient particulièrement à cœur. Je voulais commencer une sèche sans perdre le peu de muscle que j’avais réussi à obtenir — ce qui arrive facilement quand on calcule mal son déficit calorique.
@@ -125,6 +126,7 @@ const CreditsPage = () => {
           <p className="m-0 text-xs text-white/70 italic">
             Inspiré de l'application <a href="https://macrofactorapp.com/" target="_blank" rel="noopener noreferrer" className="text-white underline font-bold">MacroFactor</a>
           </p>
+        </div>
         </div>
       </section>
     </main>
