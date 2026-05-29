@@ -57,11 +57,11 @@ const ProfilPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-24">
-      <section className="w-full max-w-[600px] mx-auto py-8 px-5 text-black">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12 text-black">
         <PageTitle title="MON PROFIL" />
 
-        <div className="flex flex-col gap-12 mt-6">
-          <div>
+        <div className="flex flex-col gap-12 mt-6 max-w-[600px] mx-auto">
+          <div className="w-full">
             <ProfilForm
               user={user}
               userData={userData}
