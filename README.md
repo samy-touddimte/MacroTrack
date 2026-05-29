@@ -21,7 +21,6 @@ La plupart des applications de fitness (comme MyFitnessPal, Yazio) se basent sur
 **[Lire le détail complet du modèle mathématique (METABOLIC_MODEL.md)](./METABOLIC_MODEL.md)**
 
 
-
 ## Architecture & Stack Technique
 
 L'application suit les principes de la **Clean Architecture** et s'appuie sur une stack logicielle moderne et industrielle :
@@ -78,8 +77,16 @@ L'ensemble de l'écosystème (Frontend, Backend API, Base de Données) est docke
 
 ### Lancer l'application
 
+Pour démarrer l'application (backend, frontend et base de données), exécutez le script de démarrage à la racine du projet :
+
 ```bash
-docker-compose up -d --build
+./start.sh
+```
+
+Pour arrêter l'application, utilisez le script d'arrêt :
+
+```bash
+./stop.sh
 ```
 
 L'application sera disponible sur les ports suivants :
