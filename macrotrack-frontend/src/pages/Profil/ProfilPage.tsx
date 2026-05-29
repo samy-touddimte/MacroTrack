@@ -57,42 +57,44 @@ const ProfilPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-24">
-      <section className="container section max-w-[800px] mx-auto py-8 px-5 text-black">
-        <div className="mb-8">
-          <PageTitle title="MON PROFIL" />
-        </div>
+      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5 text-black">
+        <PageTitle title="MON PROFIL" />
 
-        <ProfilForm
-          user={user}
-          userData={userData}
-          onSubmit={onSubmit}
-          isPending={updateMutation.isPending}
-          successMessage={successMessage}
-          errorMessage={errorMessage}
-        />
-
-        {/* Section Sécurité */}
-        <div className="mt-16 pt-12">
-          <h3 className="font-display text-[1.5rem] tracking-wide m-0 mb-6">
-            SÉCURITÉ
-          </h3>
-          <button
-            type="button"
-            onClick={() => setIsPasswordFormOpen(!isPasswordFormOpen)}
-            className="w-full max-w-[400px] py-3 bg-primary text-white font-display text-[1.1rem] rounded-xl hover:bg-opacity-80 transition-all cursor-pointer border-none text-center"
-          >
-            CHANGER LE MOT DE PASSE
-          </button>
-          
-          <div 
-            className="overflow-hidden transition-[max-height] duration-300 ease-in-out mt-4 max-w-[400px]"
-            style={{ maxHeight: isPasswordFormOpen ? '500px' : '0' }}
-          >
-            <PasswordChangeForm 
-              onSuccess={setSuccessMessage} 
-              onError={setErrorMessage} 
-              onCancel={() => setIsPasswordFormOpen(false)}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-12 mt-6">
+          <div className="xl:col-span-2">
+            <ProfilForm
+              user={user}
+              userData={userData}
+              onSubmit={onSubmit}
+              isPending={updateMutation.isPending}
+              successMessage={successMessage}
+              errorMessage={errorMessage}
             />
+          </div>
+
+          {/* Section Sécurité */}
+          <div className="xl:col-span-1 pt-2">
+            <h3 className="font-display text-[1.5rem] tracking-wide m-0 mb-6">
+              SÉCURITÉ
+            </h3>
+            <button
+              type="button"
+              onClick={() => setIsPasswordFormOpen(!isPasswordFormOpen)}
+              className="button-save-objectif"
+            >
+              CHANGER LE MOT DE PASSE
+            </button>
+            
+            <div 
+              className="overflow-hidden transition-[max-height] duration-300 ease-in-out mt-4 w-full"
+              style={{ maxHeight: isPasswordFormOpen ? '500px' : '0' }}
+            >
+              <PasswordChangeForm 
+                onSuccess={setSuccessMessage} 
+                onError={setErrorMessage} 
+                onCancel={() => setIsPasswordFormOpen(false)}
+              />
+            </div>
           </div>
         </div>
       </section>

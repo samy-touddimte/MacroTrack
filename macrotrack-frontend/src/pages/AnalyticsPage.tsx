@@ -7,6 +7,7 @@ import type { Period } from '../hooks/useAnalyticsByPeriod';
 import { WeightTrendSection } from './Analytics/WeightTrendSection';
 import { TdeeEstimatedSection } from './Analytics/TdeeEstimatedSection';
 import { ForecastSection } from './Analytics/ForecastSection';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 const AnalyticsPage = () => {
   const [weightPeriod, setWeightPeriod] = useState<Period>('1M');
@@ -28,33 +29,35 @@ const AnalyticsPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-32 border-t-0">
-      <div className="max-w-[800px] mx-auto py-8 px-5">
-        <h1 className="font-display text-3xl md:text-[3.5rem] text-gray-dark mb-6 md:mb-12">
-          ANALYSES
-        </h1>
+      <div className="max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5">
+        <PageTitle title="ANALYSES" />
 
-        <WeightTrendSection
-          weightTrend={weightTrend}
-          weightPeriod={weightPeriod}
-          setWeightPeriod={setWeightPeriod}
-          wLoading={wLoading}
-          wError={wError}
-          wStart={wStart}
-          wEnd={wEnd}
-          goal={goal}
-        />
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mt-6 mb-8">
+          <WeightTrendSection
+            weightTrend={weightTrend}
+            weightPeriod={weightPeriod}
+            setWeightPeriod={setWeightPeriod}
+            wLoading={wLoading}
+            wError={wError}
+            wStart={wStart}
+            wEnd={wEnd}
+            goal={goal}
+          />
 
-        <TdeeEstimatedSection
-          tdeeDataSep={tdeeDataSep}
-          tdeePeriod={tdeePeriod}
-          setTdeePeriod={setTdeePeriod}
-          tLoading={tLoading}
-          tError={tError}
-          tStart={tStart}
-          tEnd={tEnd}
-        />
+          <ForecastSection forecastData={forecastData} />
+        </div>
 
-        <ForecastSection forecastData={forecastData} />
+        <div>
+          <TdeeEstimatedSection
+            tdeeDataSep={tdeeDataSep}
+            tdeePeriod={tdeePeriod}
+            setTdeePeriod={setTdeePeriod}
+            tLoading={tLoading}
+            tError={tError}
+            tStart={tStart}
+            tEnd={tEnd}
+          />
+        </div>
       </div>
     </main>
   );

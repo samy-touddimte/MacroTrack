@@ -64,42 +64,48 @@ const ObjectifPage = () => {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] mx-auto py-8 px-5 text-black">
-        <div className="mb-6">
-          <PageTitle title="MON OBJECTIF" />
+      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-5 text-black">
+        <PageTitle title="MON OBJECTIF" />
+
+        <div className="mb-8">
+          <WeeklyStrategyBar dailyCalorieTarget={dailyCalorieTarget} />
         </div>
 
-        {error && <div className="form-error">{error}</div>}
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12">
+          {/* Main Column */}
+          <div className="xl:col-span-2 flex flex-col gap-6">
+            <GoalProgress 
+              weightRemaining={weightRemaining}
+              weightAlreadyLost={weightAlreadyLost}
+              dailyCalorieTarget={dailyCalorieTarget}
+              estimatedDateFromApi={estimatedDateFromApi}
+            />
+            
+            <GoalMetrics 
+              currentWeight={currentWeight}
+              targetWeightKg={goal?.targetWeightKg ?? null}
+              weeklyRateKg={goal?.weeklyRateKg ?? null}
+            />
 
-        <WeeklyStrategyBar dailyCalorieTarget={dailyCalorieTarget} />
-        
-        <GoalMetrics 
-          currentWeight={currentWeight}
-          targetWeightKg={goal?.targetWeightKg ?? null}
-          weeklyRateKg={goal?.weeklyRateKg ?? null}
-        />
+            <DietAdherence 
+              score={score}
+              scoreColor={scoreColor}
+            />
 
-        <GoalActions 
-          goalExists={!!goal}
-          onOpenModal={openModal}
-        />
+            <GoalHistory 
+              history={history}
+              deleteMutation={deleteMutation}
+            />
+          </div>
 
-        <GoalProgress 
-          weightRemaining={weightRemaining}
-          weightAlreadyLost={weightAlreadyLost}
-          dailyCalorieTarget={dailyCalorieTarget}
-          estimatedDateFromApi={estimatedDateFromApi}
-        />
-
-        <DietAdherence 
-          score={score}
-          scoreColor={scoreColor}
-        />
-
-        <GoalHistory 
-          history={history}
-          deleteMutation={deleteMutation}
-        />
+          {/* Side Column */}
+          <div className="xl:col-span-1 flex flex-col gap-6">
+            <GoalActions 
+              goalExists={!!goal}
+              onOpenModal={openModal}
+            />
+          </div>
+        </div>
 
         <GoalModal
           isOpen={isModalOpen}

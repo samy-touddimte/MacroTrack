@@ -6,6 +6,7 @@ import { fr } from 'date-fns/locale';
 import { DailyMacroCard } from './Dashboard/DailyMacroCard';
 import { TdeeCard } from './Dashboard/TdeeCard';
 import { WeightProgressCard } from './Dashboard/WeightProgressCard';
+import PageTitle from '../components/PageTitle/PageTitle';
 
 function DashboardPage() {
   const { data, projection, isLoading, error, refetchAll } = useDashboard();
@@ -49,24 +50,26 @@ function DashboardPage() {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] mx-auto py-8 px-4">
-        <header className="mb-6 md:mb-12">
-          <p className="uppercase text-sm text-text-muted tracking-widest m-0 font-bold">
-            {format(new Date(), 'EEEE, d MMMM', { locale: fr })}
-          </p>
-          <h1 className="text-3xl md:text-[3.5rem] my-1">DASHBOARD</h1>
-        </header>
+      <section className="container section max-w-[800px] xl:max-w-[1200px] mx-auto py-8 px-4">
+        <PageTitle 
+          title="DASHBOARD" 
+          dateSubtitle={format(new Date(), 'EEEE, d MMMM', { locale: fr })} 
+        />
 
-        <DailyMacroCard data={data} />
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12 mt-6">
+          <div className="xl:col-span-2">
+            <DailyMacroCard data={data} />
+          </div>
 
-        <div>
-          <h2 className="text-lg md:text-[1.4rem] text-black tracking-wide mb-4 md:mb-6">
-            STATISTIQUES
-          </h2>
+          <div className="xl:col-span-1">
+            <h2 className="text-lg md:text-[1.4rem] text-black tracking-wide mb-4 md:mb-6">
+              STATISTIQUES
+            </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <TdeeCard data={data} />
-            <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-1 gap-6">
+              <TdeeCard data={data} />
+              <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
+            </div>
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ export const WeightTrendSection: React.FC<WeightTrendSectionProps> = ({
   }, [data]);
 
   return (
-    <section className="mb-14">
+    <section className="w-full flex flex-col h-full">
       <h2 className="font-display text-base md:text-[1.2rem] text-text-muted tracking-widest mb-4 md:mb-6">
         TENDANCE DU POIDS
       </h2>

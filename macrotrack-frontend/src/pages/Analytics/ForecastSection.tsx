@@ -83,7 +83,7 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
   }
 
   return (
-    <section className="mt-14">
+    <section className="w-full flex flex-col h-full">
       <h2 className="font-display text-base md:text-[1.2rem] text-text-muted tracking-widest mb-4 md:mb-6">
         PRÉVISIONS
       </h2>
