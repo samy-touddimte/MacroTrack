@@ -71,9 +71,9 @@ const ObjectifPage = () => {
           <WeeklyStrategyBar dailyCalorieTarget={dailyCalorieTarget} />
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12">
-          {/* Main Column */}
-          <div className="xl:col-span-2 flex flex-col gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12">
+          {/* Left Column */}
+          <div className="flex flex-col gap-6">
             <GoalProgress 
               weightRemaining={weightRemaining}
               weightAlreadyLost={weightAlreadyLost}
@@ -87,22 +87,24 @@ const ObjectifPage = () => {
               weeklyRateKg={goal?.weeklyRateKg ?? null}
             />
 
-            <DietAdherence 
-              score={score}
-              scoreColor={scoreColor}
+            <div className="w-full md:w-2/3 xl:max-w-md mt-4">
+              <DietAdherence 
+                score={score}
+                scoreColor={scoreColor}
+              />
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="flex flex-col gap-6">
+            <GoalActions 
+              goalExists={!!goal}
+              onOpenModal={openModal}
             />
 
             <GoalHistory 
               history={history}
               deleteMutation={deleteMutation}
-            />
-          </div>
-
-          {/* Side Column */}
-          <div className="xl:col-span-1 flex flex-col gap-6">
-            <GoalActions 
-              goalExists={!!goal}
-              onOpenModal={openModal}
             />
           </div>
         </div>
