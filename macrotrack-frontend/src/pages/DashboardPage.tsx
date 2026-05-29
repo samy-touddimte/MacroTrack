@@ -56,21 +56,23 @@ function DashboardPage() {
           dateSubtitle={format(new Date(), 'EEEE, d MMMM', { locale: fr })} 
         />
 
-        <div className="flex flex-col items-center gap-10 mt-6 max-w-[1000px] mx-auto">
-          <div className="w-full">
-            <DailyMacroCard data={data} />
-          </div>
-
-          <div className="w-full flex flex-col items-center mt-4">
-            <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-6 uppercase text-center">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12 mt-6">
+          
+          <div className="xl:col-span-1 flex flex-col items-center xl:items-start">
+            <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-6 uppercase text-center xl:text-left w-full">
               STATISTIQUES
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <div className="grid grid-cols-1 gap-6 w-full">
               <TdeeCard data={data} />
               <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
             </div>
           </div>
+
+          <div className="xl:col-span-2">
+            <DailyMacroCard data={data} />
+          </div>
+
         </div>
       </section>
     </main>
