@@ -25,7 +25,7 @@ const DonutGauge = ({ value, target, size = 320, strokeWidth = 24 }: DonutGaugeP
   const endAngle = 110;
   const totalAngle = endAngle - startAngle;
   const currentAngle = startAngle + percent * totalAngle;
-  const visualHeight = 240; // hauteur visuelle réduite
+  const visualHeight = size * 0.75;
 
   return (
     <div className="w-full flex flex-col items-center">

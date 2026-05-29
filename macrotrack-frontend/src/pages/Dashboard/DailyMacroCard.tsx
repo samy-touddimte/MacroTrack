@@ -30,7 +30,7 @@ export const DailyMacroCard: React.FC<DailyMacroCardProps> = ({ data }) => {
         OBJECTIF JOURNALIER
       </h2>
 
-      <DonutGauge value={data?.todayCaloriesKcal || 0} target={data?.dailyCalorieTarget || 2000} size={320} />
+      <DonutGauge value={data?.todayCaloriesKcal || 0} target={data?.dailyCalorieTarget || 2000} size={380} />
 
       <div className="flex gap-8 mt-12">
         {renderMacroBar('PROTÉINES', data?.todayMacros?.proteinG || 0, data?.macroTargets?.proteinG || 0, '#FF6B6B')}

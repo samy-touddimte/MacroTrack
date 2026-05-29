@@ -50,13 +50,13 @@ function DashboardPage() {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="w-full max-w-[800px] mx-auto py-8 px-4">
+      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-4 xl:px-12">
         <PageTitle 
           title="DASHBOARD" 
           dateSubtitle={format(new Date(), 'EEEE, d MMMM', { locale: fr })} 
         />
 
-        <div className="flex flex-col items-center gap-10 mt-6">
+        <div className="flex flex-col items-center gap-10 mt-6 max-w-[1000px] mx-auto">
           <div className="w-full">
             <DailyMacroCard data={data} />
           </div>
@@ -66,7 +66,7 @@ function DashboardPage() {
               STATISTIQUES
             </h2>
 
-            <div className="flex flex-col gap-6 w-full max-w-[600px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
               <TdeeCard data={data} />
               <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
             </div>
