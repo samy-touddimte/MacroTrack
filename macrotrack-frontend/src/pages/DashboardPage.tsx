@@ -58,7 +58,7 @@ function DashboardPage() {
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 xl:gap-12 mt-6">
           
-          <div className="xl:col-span-1 flex flex-col items-center xl:items-start">
+          <div className="xl:col-span-1 flex flex-col items-center xl:items-start order-2 xl:order-1">
             <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-6 uppercase text-center xl:text-left w-full">
               STATISTIQUES
             </h2>
@@ -69,7 +69,7 @@ function DashboardPage() {
             </div>
           </div>
 
-          <div className="xl:col-span-2">
+          <div className="xl:col-span-2 order-1 xl:order-2">
             <DailyMacroCard data={data} />
           </div>
 
