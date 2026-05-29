@@ -49,7 +49,7 @@ function DashboardPage() {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] lg:max-w-7xl mx-auto py-8 px-4 lg:px-8">
+      <section className="container section max-w-[800px] mx-auto py-8 px-4">
         <header className="mb-12">
           <p className="uppercase text-sm text-text-muted tracking-widest m-0 font-bold">
             {format(new Date(), 'EEEE, d MMMM', { locale: fr })}
@@ -57,20 +57,16 @@ function DashboardPage() {
           <h1 className="text-[3.5rem] my-1">DASHBOARD</h1>
         </header>
 
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 lg:items-start">
-          <div className="lg:max-w-lg lg:mx-auto w-full">
-            <DailyMacroCard data={data} />
-          </div>
+        <DailyMacroCard data={data} />
 
-          <div className="lg:max-w-lg lg:mx-auto w-full">
-            <h2 className="text-[1.4rem] text-black tracking-wide mb-6">
-              STATISTIQUES
-            </h2>
+        <div>
+          <h2 className="text-[1.4rem] text-black tracking-wide mb-6">
+            STATISTIQUES
+          </h2>
 
-            <div className="grid grid-cols-2 gap-6 lg:grid-cols-1 xl:grid-cols-2">
-              <TdeeCard data={data} />
-              <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
-            </div>
+          <div className="grid grid-cols-2 gap-6">
+            <TdeeCard data={data} />
+            <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
           </div>
         </div>
       </section>
