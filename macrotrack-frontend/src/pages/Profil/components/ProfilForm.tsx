@@ -49,7 +49,7 @@ export const ProfilForm = ({ user, userData, onSubmit, isPending, successMessage
         </div>
       )}
 
-      <div className="stack-grid gap-8">
+      <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-6 py-2">
           <h3 className="font-display text-[1.5rem] tracking-wide m-0">
             INFORMATIONS PERSONNELLES

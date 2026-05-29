@@ -57,11 +57,11 @@ const ProfilPage = () => {
 
   return (
     <main className="bg-white min-h-screen pb-24">
-      <section className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12 text-black">
+      <section className="w-full max-w-[600px] mx-auto py-8 px-5 text-black">
         <PageTitle title="MON PROFIL" />
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-12 mt-6">
-          <div className="xl:col-span-2">
+        <div className="flex flex-col gap-12 mt-6">
+          <div>
             <ProfilForm
               user={user}
               userData={userData}
@@ -73,7 +73,7 @@ const ProfilPage = () => {
           </div>
 
           {/* Section Sécurité */}
-          <div className="xl:col-span-1 pt-2">
+          <div className="pt-2">
             <h3 className="font-display text-[1.5rem] tracking-wide m-0 mb-6">
               SÉCURITÉ
             </h3>
