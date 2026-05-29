@@ -45,7 +45,7 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/v1/auth/register", "/api/v1/auth/login", "/api/v1/auth/refresh").permitAll()                
-                .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/api-docs/**", "/actuator/health", "/actuator/info").permitAll()
+                .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/api-docs/**", "/actuator/health", "/actuator/info", "/api/health").permitAll()
                 .anyRequest().authenticated()
             )
             .exceptionHandling(ex -> ex.authenticationEntryPoint(customAuthenticationEntryPoint))

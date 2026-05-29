@@ -14,4 +14,9 @@ COPY --from=build /app/target/*.jar app.jar
 RUN mkdir -p /app/logs
 
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+
+# On limite la RAM à 256 Mo pour laisser de la marge au système
+ENV JAVA_OPTS="-Xmx256m -Xms256m"
+
+# Lance l'app avec ces paramètres
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar /app/app.jar"]
