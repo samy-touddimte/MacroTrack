@@ -30,7 +30,7 @@ export const TdeeEstimatedSection: React.FC<TdeeEstimatedSectionProps> = ({
   }, [data]);
 
   return (
-    <section>
+    <section className="w-full flex flex-col h-full">
       <h2 className="font-display text-base md:text-[1.2rem] text-text-muted tracking-widest mb-4 md:mb-6">
         TDEE ESTIMÉ
       </h2>

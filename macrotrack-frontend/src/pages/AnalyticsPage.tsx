@@ -32,7 +32,19 @@ const AnalyticsPage = () => {
       <div className="w-full max-w-[800px] xl:max-w-none mx-auto py-8 px-5 xl:px-12">
         <PageTitle title="ANALYSES" />
 
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mt-6 mb-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-12 mt-6">
+          <TdeeEstimatedSection
+            tdeeDataSep={tdeeDataSep}
+            tdeePeriod={tdeePeriod}
+            setTdeePeriod={setTdeePeriod}
+            tLoading={tLoading}
+            tError={tError}
+            tStart={tStart}
+            tEnd={tEnd}
+          />
+
+          <ForecastSection forecastData={forecastData} />
+
           <WeightTrendSection
             weightTrend={weightTrend}
             weightPeriod={weightPeriod}
@@ -42,20 +54,6 @@ const AnalyticsPage = () => {
             wStart={wStart}
             wEnd={wEnd}
             goal={goal}
-          />
-
-          <ForecastSection forecastData={forecastData} />
-        </div>
-
-        <div>
-          <TdeeEstimatedSection
-            tdeeDataSep={tdeeDataSep}
-            tdeePeriod={tdeePeriod}
-            setTdeePeriod={setTdeePeriod}
-            tLoading={tLoading}
-            tError={tError}
-            tStart={tStart}
-            tEnd={tEnd}
           />
         </div>
       </div>
