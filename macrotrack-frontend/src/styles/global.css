@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300..1000;1,9..40,300..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-purple: #C84AFE;
+  --color-gray-dark: #1A1A1A;
+  --color-gray-mid: #3A3A3A;
+  --color-gray-light: #F2F2F2;
+  --color-text-muted: #888888;
+  --color-green: #22C55E;
+  --color-red: #EF4444;
+  --color-orange: #F97316;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --max-width: 1100px;
+  --navbar-height: 64px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+h3 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select {
+  font-family: var(--font-body);
+}
+
+body::selection {
+  background: var(--color-purple);
+  color: var(--color-white);
+}
+
+/* les flèches natives des champs number ont leur propre fond blanc
+   qui ne se fond pas avec nos inputs custom — on les cache pour tous les navigateurs */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Suppression globale des bordures sur les éléments de saisie et de sélection au repos */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]):not(.custom-range-slider),
+textarea,
+select {
+  border: none !important;
+  background-color: var(--color-gray-light);
+  outline: none;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]):not(.custom-range-slider):focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* range input custom */
+.custom-range-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #E0E0E0;
+  outline: none;
+  cursor: pointer;
+}
+
+.custom-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #C84AFE;
+  box-shadow: 0 2px 6px rgba(200, 74, 254, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease;
+}
+
+.custom-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+}
+
+.custom-range-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #C84AFE;
+  box-shadow: 0 2px 6px rgba(200, 74, 254, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: transform 0.1s ease;
+}
+
+.custom-range-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* input custom pour la modal objectif */
+.custom-input-container {
+  display: flex;
+  align-items: center;
+  background: #F2F2F2;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+  padding: 0.4rem 0.8rem;
+}
+
+.custom-input-container:focus-within {
+  background: #FFFFFF;
+}
+

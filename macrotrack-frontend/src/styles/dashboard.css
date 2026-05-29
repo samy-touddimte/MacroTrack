@@ -1,0 +1,152 @@
+.dashboard-header {
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.dashboard-subtitles {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 2rem;
+}
+
+.dashboard-left .macro-pills,
+.macro-pills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-left .macro-pill,
+.macro-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-left .macro-pill span,
+.macro-pill span {
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+.dashboard-left .macro-pill strong,
+.macro-pill strong {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.algorithm-step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.algorithm-number {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-purple);
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dashboard-subtitles h2 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: 2rem;
+}
+
+.dashboard-left,
+.dashboard-right {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tdee-widget {
+  background: var(--color-gray-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.tdee-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tdee-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.tdee-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tdee-value {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-purple);
+}
+
+.tdee-confidence {
+  text-align: right;
+}
+
+.confidence-dots {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.tdee-explanation {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}

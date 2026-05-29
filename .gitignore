@@ -1,0 +1,46 @@
+# =========================
+# Fichiers d'environnement
+# =========================
+.env
+.env.local
+macrotrack-frontend/.env
+
+# =========================
+# Backend (Java / Spring Boot)
+# =========================
+target/
+macrotrack-backend/target/
+*.class
+*.jar
+*.war
+.mvn/
+!mvnw
+!mvnw.cmd
+
+# =========================
+# Frontend (Node.js / Vite)
+# =========================
+node_modules/
+macrotrack-frontend/node_modules/
+macrotrack-frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Logs et fichiers temporaires
+# =========================
+*.log
+macrotrack-backend/*.log
+macrotrack-backend/logs/
+macrotrack-frontend/*.log
+scratch/
+macrotrack-backend/scratch/
+
+# =========================
+# IDEs / Editeurs de code
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
