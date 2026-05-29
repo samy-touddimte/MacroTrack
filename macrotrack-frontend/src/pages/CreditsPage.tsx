@@ -110,30 +110,30 @@ const CreditsPage = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Auteur */}
+              <div className="bg-primary rounded-2xl flex flex-col items-center justify-center gap-4 text-center py-12 px-8 text-white w-full flex-grow">
+                <span className="text-xs text-white/80 uppercase tracking-[0.15em] font-bold">
+                  RÉALISÉ PAR
+                </span>
+                <h2 className="font-display text-[2.5rem] text-white m-0 tracking-wide">
+                  SAMY TOUDDIMTE
+                </h2>
+                <p className="m-0 text-[0.95rem] text-white/90 max-w-[500px] leading-relaxed">
+                  Étudiant passionné par la conception logicielle, l'ergonomie web et la modélisation algorithmique.
+                </p>
+
+                <div className="my-2">
+                  <SocialLinks color="white" />
+                </div>
+
+                <p className="m-0 text-xs text-white/70 italic">
+                  Inspiré de l'application <a href="https://macrofactorapp.com/" target="_blank" rel="noopener noreferrer" className="text-white underline font-bold">MacroFactor</a>
+                </p>
+              </div>
             </div>
             
           </div>
-
-          {/* Auteur */}
-          <div className="bg-primary rounded-2xl flex flex-col items-center gap-4 text-center py-12 px-8 text-white max-w-[800px] w-full mx-auto">
-          <span className="text-xs text-white/80 uppercase tracking-[0.15em] font-bold">
-            RÉALISÉ PAR
-          </span>
-          <h2 className="font-display text-[2.5rem] text-white m-0 tracking-wide">
-            SAMY TOUDDIMTE
-          </h2>
-          <p className="m-0 text-[0.95rem] text-white/90 max-w-[500px] leading-relaxed">
-            Étudiant passionné par la conception logicielle, l'ergonomie web et la modélisation algorithmique.
-          </p>
-
-          <div className="my-2">
-            <SocialLinks color="white" />
-          </div>
-
-          <p className="m-0 text-xs text-white/70 italic">
-            Inspiré de l'application <a href="https://macrofactorapp.com/" target="_blank" rel="noopener noreferrer" className="text-white underline font-bold">MacroFactor</a>
-          </p>
-        </div>
         </div>
       </section>
     </main>
