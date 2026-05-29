@@ -18,7 +18,7 @@ export const WeightProgressCard: React.FC<WeightProgressCardProps> = ({ data, pr
             <p className="text-xs font-bold m-0 leading-tight">POIDS</p>
             <p className="text-xs font-bold m-0 leading-tight text-text-muted">ACTUEL</p>
           </div>
-          <p className="font-display text-[2.8rem] m-0 leading-none">
+          <p className="font-display text-[2rem] sm:text-[2.8rem] m-0 leading-none">
             {data?.latestWeight} <span className="text-[1.2rem]">KG</span>
           </p>
         </div>
@@ -28,7 +28,7 @@ export const WeightProgressCard: React.FC<WeightProgressCardProps> = ({ data, pr
             <p className="text-xs font-bold m-0 leading-tight">POIDS</p>
             <p className="text-xs font-bold m-0 leading-tight text-primary">CIBLE</p>
           </div>
-          <p className="font-display text-[2.8rem] m-0 leading-none text-primary">
+          <p className="font-display text-[2rem] sm:text-[2.8rem] m-0 leading-none text-primary">
             {data?.activeGoal?.targetWeightKg} <span className="text-[1.2rem]">KG</span>
           </p>
         </div>

@@ -22,7 +22,7 @@ const GoalProgress: React.FC<GoalProgressProps> = ({
         <span className="font-body text-sm text-text-muted">{weightAlreadyLost} kg perdus</span>
       </div>
       
-      <div className="flex justify-between items-center">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
         <div className="flex flex-col">
           <span className="font-display text-lg text-black">
             {dailyCalorieTarget ? `${Math.round(dailyCalorieTarget)} kcal` : '—'}

@@ -54,14 +54,14 @@ const GoalModal = ({
   return (
     <div
       onClick={onClose}
-      className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-center justify-center z-[60] p-5"
+      className="fixed inset-0 bg-black/50 backdrop-blur-md flex items-end sm:items-center justify-center z-[60] p-0 sm:p-5"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-[480px] bg-white rounded-2xl p-[30px] max-h-[90vh] overflow-y-auto text-black shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex flex-col gap-[20px]"
+        className="w-full sm:max-w-[480px] bg-white rounded-t-2xl sm:rounded-2xl p-5 sm:p-[30px] max-h-[90vh] overflow-y-auto text-black shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex flex-col gap-4 sm:gap-[20px]"
       >
         <div className="flex justify-between items-center">
-          <h2 className="font-display text-[2rem] text-black m-0 tracking-wide">
+          <h2 className="font-display text-[1.5rem] sm:text-[2rem] text-black m-0 tracking-wide">
             {goal ? "MODIFIER L'OBJECTIF" : "CRÉER UN OBJECTIF"}
           </h2>
         </div>
@@ -128,7 +128,7 @@ const GoalModal = ({
             </div>
           )}
 
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1 bg-gray-light rounded-xl px-4 py-3 text-center flex flex-col gap-1">
               <div className="font-body text-[1.15rem] font-medium text-black leading-tight">
                 {isCoherent && modalCaloriesEstimate !== null ? `${modalCaloriesEstimate} kcal` : '—'}

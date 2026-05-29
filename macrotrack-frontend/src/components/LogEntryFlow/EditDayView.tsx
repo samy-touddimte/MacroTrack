@@ -48,7 +48,7 @@ const EditDayView = ({ selectedDate, onDateChange, onBack, loggedDates }: EditDa
         </div>
 
         {/* Macro summary bars */}
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
             { label: 'CALORIES', value: Math.round(totalCalories), unit: 'kcal', color: 'var(--color-purple)' },
             { label: 'PROTÉINES', value: Math.round(totalProtein), unit: 'g', color: 'var(--color-black)' },

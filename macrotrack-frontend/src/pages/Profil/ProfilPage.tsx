@@ -79,13 +79,13 @@ const ProfilPage = () => {
           <button
             type="button"
             onClick={() => setIsPasswordFormOpen(!isPasswordFormOpen)}
-            className="w-full max-w-[400px] py-3 bg-primary text-white font-display text-[1.1rem] rounded-xl hover:bg-opacity-80 transition-all cursor-pointer border-none text-center"
+            className="w-full sm:max-w-[400px] py-3 bg-primary text-white font-display text-[1.1rem] rounded-xl hover:bg-opacity-80 transition-all cursor-pointer border-none text-center"
           >
             CHANGER LE MOT DE PASSE
           </button>
           
           <div 
-            className="overflow-hidden transition-[max-height] duration-300 ease-in-out mt-4 max-w-[400px]"
+            className="overflow-hidden transition-[max-height] duration-300 ease-in-out mt-4 w-full sm:max-w-[400px]"
             style={{ maxHeight: isPasswordFormOpen ? '500px' : '0' }}
           >
             <PasswordChangeForm 

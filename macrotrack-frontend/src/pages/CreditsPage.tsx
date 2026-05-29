@@ -107,11 +107,11 @@ const CreditsPage = () => {
         </div>
 
         {/* Auteur */}
-        <div className="bg-primary rounded-2xl flex flex-col items-center gap-4 text-center py-12 px-8 text-white">
+        <div className="bg-primary rounded-2xl flex flex-col items-center gap-4 text-center py-8 sm:py-12 px-4 sm:px-8 text-white">
           <span className="text-xs text-white/80 uppercase tracking-[0.15em] font-bold">
             RÉALISÉ PAR
           </span>
-          <h2 className="font-display text-[2.5rem] text-white m-0 tracking-wide">
+          <h2 className="font-display text-[1.8rem] sm:text-[2.5rem] text-white m-0 tracking-wide">
             SAMY TOUDDIMTE
           </h2>
           <p className="m-0 text-[0.95rem] text-white/90 max-w-[500px] leading-relaxed">

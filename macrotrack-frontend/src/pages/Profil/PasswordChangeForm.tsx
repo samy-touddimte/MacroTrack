@@ -41,7 +41,7 @@ export const PasswordChangeForm = ({ onSuccess, onError, onCancel }: PasswordCha
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-5 max-w-[400px]">
+    <form onSubmit={handleSubmit(onSubmit)} className="grid gap-5 w-full sm:max-w-[400px]">
       <div className="input-group">
         <label className="input-label">Ancien mot de passe</label>
         <input

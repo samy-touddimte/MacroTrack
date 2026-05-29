@@ -49,12 +49,12 @@ function DashboardPage() {
 
   return (
     <main className="bg-white min-h-screen">
-      <section className="container section max-w-[800px] mx-auto py-8 px-4">
+      <section className="container section max-w-[800px] mx-auto py-6 sm:py-8 px-4">
         <header className="mb-12">
           <p className="uppercase text-sm text-text-muted tracking-widest m-0 font-bold">
             {format(new Date(), 'EEEE, d MMMM', { locale: fr })}
           </p>
-          <h1 className="text-[3.5rem] my-1">DASHBOARD</h1>
+          <h1 className="text-[2rem] sm:text-[3.5rem] my-1">DASHBOARD</h1>
         </header>
 
         <DailyMacroCard data={data} />
@@ -64,7 +64,7 @@ function DashboardPage() {
             STATISTIQUES
           </h2>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <TdeeCard data={data} />
             <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
           </div>

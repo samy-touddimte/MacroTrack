@@ -94,12 +94,12 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
           </p>
         )}
 
-        <div className="flex justify-between items-start mb-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-3 sm:gap-0 mb-4">
           <div>
             <p className="text-[0.65rem] text-text-muted uppercase tracking-widest m-0 mb-0.5 font-bold">
               Date estimée (Idéale)
             </p>
-            <p className="font-display text-[2rem] text-gray-dark m-0 leading-none">
+            <p className="font-display text-[1.4rem] sm:text-[2rem] text-gray-dark m-0 leading-none">
               {(() => {
                 if (forecastMeta.depasseDeuxAns) return 'plus de 2 ans';
                 if (forecastMeta.dateAtteinte) return format(new Date(forecastMeta.dateAtteinte), 'd MMMM yyyy', { locale: fr });
@@ -108,11 +108,11 @@ export const ForecastSection: React.FC<ForecastSectionProps> = ({ forecastData }
             </p>
           </div>
           {forecastData.hasEnoughDataForEmpirical && (
-            <div className="text-right">
+            <div className="text-left sm:text-right">
               <p className="text-[0.65rem] text-text-muted uppercase tracking-widest m-0 mb-0.5 font-bold">
                 Date estimée (Empirique)
               </p>
-              <p className="font-display text-[2rem] text-gray-dark m-0 leading-none">
+              <p className="font-display text-[1.4rem] sm:text-[2rem] text-gray-dark m-0 leading-none">
                 {(() => {
                   if (forecastMeta.depasseDeuxAns) return 'plus de 2 ans';
                   if (forecastData.empiricalDate) return format(new Date(forecastData.empiricalDate), 'd MMMM yyyy', { locale: fr });
