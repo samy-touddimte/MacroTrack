@@ -15,24 +15,22 @@ const DAYS = [
 ];
 
 const WeeklyStrategyBar: React.FC<WeeklyStrategyBarProps> = ({ dailyCalorieTarget }) => {
-  
   const currentDayId = new Date().getDay();
 
   return (
-    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+    <div className="flex gap-1 sm:gap-2 overflow-x-auto pb-2 scrollbar-hide justify-start">
       {DAYS.map((day, index) => {
         const isToday = day.id === currentDayId;
-        const bgColor = isToday ? 'bg-primary text-white' : 'bg-[#F4F4F4] text-text-muted';
-        const textColor = isToday ? 'text-white' : 'text-black';
+        const bgColor = isToday ? 'bg-[var(--color-purple)] text-white' : 'bg-transparent text-black';
         const labelColor = isToday ? 'text-white/80' : 'text-text-muted';
 
         return (
           <div 
             key={index} 
-            className={`flex-1 min-w-[50px] sm:min-w-[60px] flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl sm:rounded-2xl ${bgColor}`}
+            className={`flex flex-col items-center justify-center shrink-0 w-[46px] sm:w-[50px] h-[56px] rounded-[16px] ${bgColor}`}
           >
-            <span className={`text-xs font-medium mb-1 ${labelColor}`}>{day.label}</span>
-            <span className={`text-sm font-bold ${textColor}`}>
+            <span className={`text-xs ${labelColor}`}>{day.label}</span>
+            <span className="font-bold text-[0.85rem] leading-tight mt-0.5">
               {dailyCalorieTarget ? Math.round(dailyCalorieTarget) : '—'}
             </span>
           </div>
