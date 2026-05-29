@@ -29,7 +29,7 @@ class AdherenceServiceTest {
     @Test
     void computeAdherence_insufficientDays_returnsInsufficient() {
         LocalDate today = LocalDate.of(2026, 1, 10);
-        GoalResponse goal = new GoalResponse(1L, 75.0, -0.5, today.minusDays(5), true);
+        GoalResponse goal = new GoalResponse(1L, 75.0, -0.5, today.minusDays(3), true);
 
         AdherenceMetrics metrics = adherenceService.computeAdherence(1L, goal, 2000.0, today);
 

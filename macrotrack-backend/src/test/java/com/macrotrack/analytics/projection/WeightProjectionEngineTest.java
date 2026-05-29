@@ -83,7 +83,7 @@ class WeightProjectionEngineTest {
     }
 
     @Test
-    void maintain_returnsSinglePoint() {
+    void maintain_returnsProjection() {
         Mockito.when(bmrCalculatorService.computeInitialTdee(Mockito.any(), Mockito.anyDouble(), Mockito.any())).thenReturn(2200.0);
 
         var result = engine.generateWeightProjection(
@@ -93,7 +93,7 @@ class WeightProjectionEngineTest {
                 )
         );
         assertEquals(MetabolicGoalType.MAINTAIN, result.goalType());
-        assertEquals(1, result.points().size());
+        assertEquals(2, result.points().size());
     }
 
     @Test

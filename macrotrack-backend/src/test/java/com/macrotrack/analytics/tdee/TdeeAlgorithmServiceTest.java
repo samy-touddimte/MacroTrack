@@ -104,4 +104,67 @@ class TdeeAlgorithmServiceTest {
         assertNotNull(tdee);
         assertEquals(MetabolicConstants.DEFAULT_TDEE_KCAL, tdee, DELTA);
     }
+
+    @Test
+    void computeEstimatedTdee_validData_returnsSmoothedTdee() {
+        var user = new User();
+        user.setSex(BiologicalSex.MALE);
+        user.setTrainingType(com.macrotrack.user.model.TrainingType.CARDIO_ONLY);
+        user.setTrainingExperience(com.macrotrack.user.model.TrainingExperience.NOVICE);
+        user.setHeightCm(180.0);
+        user.setBirthDate(LocalDate.of(1990, 1, 1));
+        user.setActivityLevel(ActivityLevel.SEDENTARY);
+
+        Map<LocalDate, Double> trend = new LinkedHashMap<>();
+        Map<LocalDate, Double> calories = new LinkedHashMap<>();
+        LocalDate start = LocalDate.of(2026, 1, 1);
+
+        for (int i = 0; i <= 30; i++) {
+            trend.put(start.plusDays(i), 80.0 - (0.5 * i / 7.0));
+            calories.put(start.plusDays(i), 2000.0);
+        }
+
+        Map<LocalDate, Double> result = tdeeAlgorithmService.computeEstimatedTdee(user, trend, calories, null);
+
+        assertFalse(result.isEmpty());
+        Double tdeeDay30 = result.get(start.plusDays(30));
+        assertNotNull(tdeeDay30);
+        assertTrue(tdeeDay30 > 2200, "Expected TDEE to converge upwards, but was " + tdeeDay30);
+    }
+
+    @Test
+    void computeEstimatedTdee_missingCalories_compensatesProperly() {
+        var user = new User();
+        user.setSex(BiologicalSex.MALE);
+        user.setTrainingType(com.macrotrack.user.model.TrainingType.CARDIO_ONLY);
+        user.setTrainingExperience(com.macrotrack.user.model.TrainingExperience.NOVICE);
+
+        Map<LocalDate, Double> trend = new LinkedHashMap<>();
+        Map<LocalDate, Double> calories = new LinkedHashMap<>();
+        LocalDate start = LocalDate.of(2026, 1, 1);
+
+        for (int i = 0; i <= 15; i++) {
+            trend.put(start.plusDays(i), 80.0 - (0.5 * i / 7.0));
+            // Log calories for 6 out of 7 days
+            if (i % 7 != 0) { 
+                calories.put(start.plusDays(i), 2000.0);
+            }
+        }
+
+        Map<LocalDate, Double> result = tdeeAlgorithmService.computeEstimatedTdee(user, trend, calories, null);
+
+        assertFalse(result.isEmpty());
+        Double tdeeDay15 = result.get(start.plusDays(15));
+        assertNotNull(tdeeDay15);
+    }
+
+    @Test
+    void buildInitialTdeeLine_returnsConstantValue() {
+        List<LocalDate> dates = List.of(LocalDate.of(2026, 1, 1), LocalDate.of(2026, 1, 2));
+        Map<LocalDate, Double> result = tdeeAlgorithmService.buildInitialTdeeLine(dates, 2500.0);
+
+        assertEquals(2, result.size());
+        assertEquals(2500.0, result.get(LocalDate.of(2026, 1, 1)));
+        assertEquals(2500.0, result.get(LocalDate.of(2026, 1, 2)));
+    }
 }

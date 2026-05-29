@@ -1,6 +1,7 @@
 # MacroTrack : Modèle Algorithmique & Métabolique Fondamental
 
-Ce document présente les fondements scientifiques et algorithmiques du backend de MacroTrack. Le système est conçu non seulement pour suivre les calories, mais aussi pour modéliser dynamiquement le métabolisme humain, s'adapter aux changements physiologiques et projeter des trajectoires de poids réalistes en utilisant des données empiriques et les sciences de la nutrition établies.
+Ce document présente les fondements scientifiques et algorithmiques du backend de MacroTrack. 
+Le système est conçu non seulement pour suivre les calories, mais aussi pour modéliser dynamiquement le métabolisme humain, s'adapter aux changements physiologiques et projeter des trajectoires de poids réalistes en utilisant des données empiriques et les sciences de la nutrition établies.
 
 ---
 
