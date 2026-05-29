@@ -63,7 +63,7 @@ const ActionSheet = ({ selectedDate, onSelectAction }: ActionSheetProps) => {
             className="w-full flex flex-col items-center justify-center py-6 px-4 hover:scale-[1.01] active:scale-[0.98] shadow-sm gap-2"
           >
             <span
-              className="font-display text-[1.1rem] tracking-wider uppercase text-center"
+              className="font-display font-bold text-[1.1rem] tracking-wider uppercase text-center"
               style={{ color: tile.color }}
             >
               {tile.title}

@@ -181,14 +181,20 @@ button.button:hover {
   left: 0;
   right: 0;
   margin-inline: auto;
-  width: 95%;
-  min-width: 550px;
+  width: 100%;
   max-width: 850px;
   background-color: var(--color-white);
   border-radius: 24px 24px 0 0;
   display: flex;
   flex-direction: column;
   max-height: 85vh;
+}
+
+@media (min-width: 768px) {
+  .bottom-sheet {
+    width: 95%;
+    min-width: 550px;
+  }
 }
 
 .bottom-sheet--entering {
@@ -1042,15 +1048,23 @@ button.button:hover {
 .button-save-objectif {
   background: var(--color-purple);
   color: var(--color-white);
-  padding: 0.9rem 4rem;
-  font-size: 1.4rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.05em;
-  width: fit-content;
+  width: 100%;
   border-radius: 999px;
   font-family: var(--font-display);
   border: none;
   cursor: pointer;
   transition: all 0.15s ease;
+}
+
+@media (min-width: 768px) {
+  .button-save-objectif {
+    padding: 0.9rem 4rem;
+    font-size: 1.4rem;
+    width: fit-content;
+  }
 }
 
 .button-save-objectif:hover {
