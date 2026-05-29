@@ -64,7 +64,7 @@ function DashboardPage() {
             STATISTIQUES
           </h2>
 
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <TdeeCard data={data} />
             <WeightProgressCard data={data} projection={projection} progressPercent={progressPercent} />
           </div>

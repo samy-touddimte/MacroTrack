@@ -28,54 +28,72 @@ const DonutGauge = ({ value, target, size = 320, strokeWidth = 24 }: DonutGaugeP
   const visualHeight = 240; // hauteur visuelle réduite
 
   return (
-    <div className="donut-container" style={{ height: visualHeight }}>
-      {/* Valeur restante */}
-      <div className="donut-side-value translate-y-[40px]">
-        <p className="donut-side-number">
-          {Math.max(0, Math.round((target ?? 0) - (value ?? 0)))}
-        </p>
-        <p className="donut-side-label">Restantes</p>
-      </div>
-
-      {/* SVG de l'arc + texte central */}
-      <div className="donut-center-wrapper" style={{ width: size, height: visualHeight }}>
-        <svg
-          width={size}
-          height={size}
-          viewBox={`0 0 ${size} ${size}`}
-          className="absolute top-[15px]"
-        >
-          <path
-            d={describeArc(size / 2, size / 2, radius, startAngle, endAngle)}
-            fill="none"
-            stroke="var(--color-gray-light)"
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-          />
-          <path
-            d={describeArc(size / 2, size / 2, radius, startAngle, currentAngle)}
-            fill="none"
-            stroke="var(--color-purple)"
-            strokeWidth={strokeWidth}
-            strokeLinecap="round"
-          />
-        </svg>
-
-        {/* Calories consommées */}
-        <div className="donut-center-value translate-y-[50px]">
-          <p className="donut-center-number">
-            {Math.round(value ?? 0)}
+    <div className="w-full flex flex-col items-center">
+      <div className="flex items-center justify-center w-full gap-1 md:gap-10 scale-90 md:scale-100 relative" style={{ height: visualHeight }}>
+        {/* Valeur restante (Desktop uniquement) */}
+        <div className="hidden md:block donut-side-value translate-y-[40px]">
+          <p className="donut-side-number">
+            {Math.max(0, Math.round((target ?? 0) - (value ?? 0)))}
           </p>
-          <p className="donut-center-label">Consommées</p>
+          <p className="donut-side-label">Restantes</p>
+        </div>
+
+        {/* SVG de l'arc + texte central */}
+        <div className="donut-center-wrapper" style={{ width: size, height: visualHeight }}>
+          <svg
+            width={size}
+            height={size}
+            viewBox={`0 0 ${size} ${size}`}
+            className="absolute top-[15px]"
+          >
+            <path
+              d={describeArc(size / 2, size / 2, radius, startAngle, endAngle)}
+              fill="none"
+              stroke="var(--color-gray-light)"
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+            />
+            <path
+              d={describeArc(size / 2, size / 2, radius, startAngle, currentAngle)}
+              fill="none"
+              stroke="var(--color-purple)"
+              strokeWidth={strokeWidth}
+              strokeLinecap="round"
+            />
+          </svg>
+
+          {/* Calories consommées */}
+          <div className="donut-center-value translate-y-[50px]">
+            <p className="donut-center-number">
+              {Math.round(value ?? 0)}
+            </p>
+            <p className="donut-center-label">Consommées</p>
+          </div>
+        </div>
+
+        {/* Cible journalière (Desktop uniquement) */}
+        <div className="hidden md:block donut-side-value translate-y-[40px]">
+          <p className="donut-side-number">
+            {Math.round(target ?? 0)}
+          </p>
+          <p className="donut-side-label">Cible</p>
         </div>
       </div>
 
-      {/* Cible journalière */}
-      <div className="donut-side-value translate-y-[40px]">
-        <p className="donut-side-number">
-          {Math.round(target ?? 0)}
-        </p>
-        <p className="donut-side-label">Cible</p>
+      {/* Valeurs sous le donut (Mobile uniquement) */}
+      <div className="flex md:hidden justify-between w-full max-w-[300px] mt-2 mb-2 px-4">
+        <div className="donut-side-value text-center">
+          <p className="donut-side-number">
+            {Math.max(0, Math.round((target ?? 0) - (value ?? 0)))}
+          </p>
+          <p className="donut-side-label">Restantes</p>
+        </div>
+        <div className="donut-side-value text-center">
+          <p className="donut-side-number">
+            {Math.round(target ?? 0)}
+          </p>
+          <p className="donut-side-label">Cible</p>
+        </div>
       </div>
     </div>
   );
