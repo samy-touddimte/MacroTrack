@@ -26,7 +26,7 @@ const renderMacroBar = (label: string, consumed: number, target: number, color: 
 export const DailyMacroCard: React.FC<DailyMacroCardProps> = ({ data }) => {
   return (
     <div className="mb-16">
-      <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-4 md:mb-8">
+      <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-4 md:mb-8 text-center uppercase">
         OBJECTIF JOURNALIER
       </h2>
 
