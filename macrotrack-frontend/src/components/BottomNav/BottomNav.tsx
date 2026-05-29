@@ -11,15 +11,15 @@ const BottomNav = ({ onPlusClick }: BottomNavProps) => {
 
   return (
     <nav 
-      className="bottom-nav-container fixed bottom-6 left-1/2 -translate-x-1/2 w-[95%] min-w-[550px] max-w-[850px] rounded-full shadow-none flex items-center justify-center py-[0.6rem] px-6 z-[150]"
+      className="bottom-nav-container fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 w-[95%] min-w-[320px] sm:min-w-[550px] max-w-[850px] rounded-[1.5rem] sm:rounded-full shadow-none flex items-center justify-center py-2 sm:py-[0.6rem] px-2 sm:px-6 z-[150]"
     >
 
       {/* Côté Gauche */}
-      <div className="flex flex-1 justify-evenly items-center">
-        <div className="w-[160px] flex justify-center">
+      <div className="flex flex-1 justify-evenly items-center gap-1 sm:gap-0">
+        <div className="w-auto sm:w-[160px] flex justify-center">
           <NavItem to="/dashboard" label="Board" />
         </div>
-        <div className="w-[160px] flex justify-center">
+        <div className="w-auto sm:w-[160px] flex justify-center">
           <NavItem to="/analytics" label="Analyses" />
         </div>
       </div>
@@ -27,18 +27,18 @@ const BottomNav = ({ onPlusClick }: BottomNavProps) => {
       {/* bouton + central */}
       <button
         onClick={onPlusClick}
-        className="nav-item-hover w-[52px] h-[52px] rounded-full bg-white text-primary border-none cursor-pointer text-[2rem] font-light flex items-center justify-center shrink-0 shadow-none mx-8 hover:bg-[#f2f2f2]"
+        className="nav-item-hover w-[44px] h-[44px] sm:w-[52px] sm:h-[52px] rounded-full bg-white text-primary border-none cursor-pointer text-[1.5rem] sm:text-[2rem] font-light flex items-center justify-center shrink-0 shadow-none mx-2 sm:mx-8 hover:bg-[#f2f2f2]"
         aria-label="Ajouter"
       >
         +
       </button>
 
       {/* Côté Droit */}
-      <div className="flex flex-1 justify-evenly items-center">
-        <div className="w-[160px] flex justify-center">
+      <div className="flex flex-1 justify-evenly items-center gap-1 sm:gap-0">
+        <div className="w-auto sm:w-[160px] flex justify-center">
           <NavItem to="/objectif" label="Objectif" />
         </div>
-        <div className="w-[160px] flex justify-center">
+        <div className="w-auto sm:w-[160px] flex justify-center">
           <UserMenuItem username={user?.username} />
         </div>
       </div>
@@ -51,7 +51,7 @@ const NavItem = ({ to, label }: { to: string; label: string }) => {
   const isActive = location.pathname === to;
   return (
     <Link to={to} 
-      className={"nav-item-hover flex items-center justify-center py-[0.6rem] px-[1.2rem] rounded-full no-underline text-[1.45rem] font-display font-normal uppercase tracking-wide whitespace-nowrap " + (isActive ? "text-white bg-white/20" : "text-white bg-transparent hover:bg-white/10")}
+      className={"nav-item-hover flex items-center justify-center py-1.5 sm:py-[0.6rem] px-2.5 sm:px-[1.2rem] rounded-full no-underline text-[0.8rem] sm:text-[1.45rem] font-display font-normal uppercase tracking-wide whitespace-nowrap " + (isActive ? "text-white bg-white/20" : "text-white bg-transparent hover:bg-white/10")}
     >
       <span>{label}</span>
     </Link>
@@ -79,9 +79,9 @@ const UserMenuItem = ({ username }: { username?: string }) => {
     <div ref={ref} className="relative">
       <button 
         onClick={() => setOpen(!open)} 
-        className={"nav-item-hover flex items-center justify-center py-[0.6rem] px-[1.2rem] rounded-full border-none cursor-pointer text-[1.45rem] font-display font-normal uppercase tracking-wide whitespace-nowrap " + (isActive ? "text-white bg-white/20" : "text-white bg-transparent hover:bg-white/10")}
+        className={"nav-item-hover flex items-center justify-center py-1.5 sm:py-[0.6rem] px-2.5 sm:px-[1.2rem] rounded-full border-none cursor-pointer text-[0.8rem] sm:text-[1.45rem] font-display font-normal uppercase tracking-wide whitespace-nowrap " + (isActive ? "text-white bg-white/20" : "text-white bg-transparent hover:bg-white/10")}
       >
-        <span className="max-w-[120px] overflow-hidden text-ellipsis whitespace-nowrap">
+        <span className="max-w-[70px] sm:max-w-[120px] overflow-hidden text-ellipsis whitespace-nowrap">
           {username ?? 'Compte'}
         </span>
       </button>

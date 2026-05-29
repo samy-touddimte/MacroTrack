@@ -29,7 +29,7 @@ const WeeklyStrategyBar: React.FC<WeeklyStrategyBarProps> = ({ dailyCalorieTarge
         return (
           <div 
             key={index} 
-            className={`flex-1 min-w-[60px] flex flex-col items-center justify-center p-3 rounded-2xl ${bgColor}`}
+            className={`flex-1 min-w-[50px] sm:min-w-[60px] flex flex-col items-center justify-center p-2 sm:p-3 rounded-xl sm:rounded-2xl ${bgColor}`}
           >
             <span className={`text-xs font-medium mb-1 ${labelColor}`}>{day.label}</span>
             <span className={`text-sm font-bold ${textColor}`}>

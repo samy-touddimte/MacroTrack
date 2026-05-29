@@ -19,7 +19,7 @@ const AuthenticatedLayout = ({ children }: AuthenticatedLayoutProps) => {
 
   return (
     <div>
-      <main className="pb-[100px] mx-auto w-[95%] min-w-[550px] max-w-[850px] px-6">
+      <main className="pb-[100px] mx-auto w-full sm:w-[95%] min-w-[320px] sm:min-w-[550px] max-w-[850px] px-4 sm:px-6">
         {children}
       </main>
       
