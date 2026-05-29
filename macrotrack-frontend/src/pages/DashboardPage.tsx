@@ -50,17 +50,17 @@ function DashboardPage() {
   return (
     <main className="bg-white min-h-screen">
       <section className="container section max-w-[800px] mx-auto py-8 px-4">
-        <header className="mb-12">
+        <header className="mb-6 md:mb-12">
           <p className="uppercase text-sm text-text-muted tracking-widest m-0 font-bold">
             {format(new Date(), 'EEEE, d MMMM', { locale: fr })}
           </p>
-          <h1 className="text-[3.5rem] my-1">DASHBOARD</h1>
+          <h1 className="text-5xl md:text-[3.5rem] my-1">DASHBOARD</h1>
         </header>
 
         <DailyMacroCard data={data} />
 
         <div>
-          <h2 className="text-[1.4rem] text-black tracking-wide mb-6">
+          <h2 className="text-xl md:text-[1.4rem] text-black tracking-wide mb-4 md:mb-6">
             STATISTIQUES
           </h2>
 

@@ -59,7 +59,7 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 8vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   line-height: 1;
   letter-spacing: 0.02em;
   text-transform: uppercase;

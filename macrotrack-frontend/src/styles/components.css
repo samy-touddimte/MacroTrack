@@ -163,11 +163,17 @@ button.button:hover {
 }
 
 .card {
-  padding: 1.75rem;
+  padding: 1.25rem;
   border-radius: var(--radius-lg);
   background: var(--color-gray-light);
   border: none;
   box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 1.75rem;
+  }
 }
 
 .bottom-sheet {

@@ -16,7 +16,7 @@ export const TdeeCard: React.FC<TdeeCardProps> = ({ data }) => {
         <p className="text-xs font-bold m-0 leading-tight text-text-muted">ESTIMÉ</p>
       </div>
 
-      <p className="font-display text-[2.8rem] text-primary m-0 leading-none">
+      <p className="font-display text-4xl md:text-[2.8rem] text-primary m-0 leading-none">
         {Math.round(currentTdee)} KCAL
       </p>
 
