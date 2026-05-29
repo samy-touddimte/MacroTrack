@@ -42,7 +42,7 @@ export const ChartHeader = ({ label, moyenne, difference, unit, startDate, endDa
         <p className="text-[0.65rem] text-text-muted uppercase tracking-widest m-0 mb-0.5 font-bold">
           Moyenne
         </p>
-        <p className="font-display text-[1.4rem] sm:text-[2rem] text-gray-dark m-0 leading-none">
+        <p className="font-display text-[2rem] text-gray-dark m-0 leading-none">
           {moyenne !== null ? `${moyenne.toFixed(1)} ${unit}` : '-'}
         </p>
       </div>
@@ -51,7 +51,7 @@ export const ChartHeader = ({ label, moyenne, difference, unit, startDate, endDa
           Différence
         </p>
         <div className="flex items-center gap-3">
-          <p className="font-display text-[1.4rem] sm:text-[2rem] m-0 leading-none" style={{ color: diffColor() }}>
+          <p className="font-display text-[2rem] m-0 leading-none" style={{ color: diffColor() }}>
             {difference !== null
               ? `${difference > 0 ? '+' : ''}${difference.toFixed(1)} ${unit}`
               : '-'}

@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import SocialLinks from '../components/SocialLinks/SocialLinks';
 
 const LogoPlaceholder = () => (
-  <div className="logo-placeholder min-w-[120px] sm:min-w-[200px] min-h-[120px] sm:min-h-[200px] flex items-center justify-end w-full">
+  <div className="logo-placeholder min-w-[200px] min-h-[200px] flex items-center justify-end w-full">
     <span className="hero-title text-black text-right text-2xl leading-tight normal-case">
     </span>
   </div>
@@ -42,19 +42,19 @@ const HomePage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link to="/auth/register">
-                  <button className="button-save-objectif w-full sm:w-[240px] h-[52px] sm:h-[60px] p-0 m-0 font-display text-lg sm:text-xl font-bold uppercase tracking-wide bg-purple-500 text-white border-2 border-purple-500 rounded-full flex items-center justify-center whitespace-nowrap">
+                  <button className="button-save-objectif w-[240px] h-[60px] p-0 m-0 font-display text-xl font-bold uppercase tracking-wide bg-purple-500 text-white border-2 border-purple-500 rounded-full flex items-center justify-center whitespace-nowrap">
                     S'INSCRIRE
                   </button>
                 </Link>
                 <Link to="/auth/login">
-                  <button className="button-save-objectif w-full sm:w-[240px] h-[52px] sm:h-[60px] p-0 m-0 font-display text-lg sm:text-xl font-bold uppercase tracking-wide bg-transparent text-black border-2 border-black rounded-full flex items-center justify-center whitespace-nowrap">
+                  <button className="button-save-objectif w-[240px] h-[60px] p-0 m-0 font-display text-xl font-bold uppercase tracking-wide bg-transparent text-black border-2 border-black rounded-full flex items-center justify-center whitespace-nowrap">
                     SE CONNECTER
                   </button>
                 </Link>
               </div>
             </div>
             
-            <div className="hidden lg:flex items-center justify-end min-h-[300px]">
+            <div className="flex items-center justify-end min-h-[300px]">
               <LogoPlaceholder />
             </div>
           </div>

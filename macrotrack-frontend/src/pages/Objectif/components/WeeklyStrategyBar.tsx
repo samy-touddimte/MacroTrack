@@ -19,7 +19,7 @@ const WeeklyStrategyBar: React.FC<WeeklyStrategyBarProps> = ({ dailyCalorieTarge
   const currentDayId = new Date().getDay();
 
   return (
-    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide snap-x snap-mandatory">
+    <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
       {DAYS.map((day, index) => {
         const isToday = day.id === currentDayId;
         const bgColor = isToday ? 'bg-primary text-white' : 'bg-[#F4F4F4] text-text-muted';
@@ -29,7 +29,7 @@ const WeeklyStrategyBar: React.FC<WeeklyStrategyBarProps> = ({ dailyCalorieTarge
         return (
           <div 
             key={index} 
-            className={`flex-1 min-w-[48px] sm:min-w-[60px] snap-center flex flex-col items-center justify-center p-2 sm:p-3 rounded-2xl ${bgColor}`}
+            className={`flex-1 min-w-[60px] flex flex-col items-center justify-center p-3 rounded-2xl ${bgColor}`}
           >
             <span className={`text-xs font-medium mb-1 ${labelColor}`}>{day.label}</span>
             <span className={`text-sm font-bold ${textColor}`}>

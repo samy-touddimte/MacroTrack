@@ -175,7 +175,8 @@ button.button:hover {
   left: 0;
   right: 0;
   margin-inline: auto;
-  width: 100%;
+  width: 95%;
+  min-width: 550px;
   max-width: 850px;
   background-color: var(--color-white);
   border-radius: 24px 24px 0 0;
@@ -558,67 +559,24 @@ button.button:hover {
   }
 }
 
-@media (min-width: 640px) {
-  .donut-container {
-    gap: 2.5rem;
-  }
-  .donut-side-value {
-    min-width: 100px;
-  }
-  .donut-side-number {
-    font-size: 2.8rem;
-  }
-  .donut-center-number {
-    font-size: 5rem;
-  }
-}
-
-@media (max-width: 639px) {
-  .home-hero {
-    padding: 4rem 0 3rem;
-  }
-  .pillars-section {
-    padding: 4rem 0;
-  }
-  .pillar-card {
-    padding: 2rem 1.5rem;
-  }
-  .steps-section-new {
-    padding: 4rem 0;
-  }
-  .steps-header {
-    margin-bottom: 3rem;
-  }
-  .hero-title {
-    font-size: clamp(2rem, 6vw, 4.8rem);
-  }
-  .page-footer {
-    padding: 1.5rem 0;
-  }
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
 .donut-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2.5rem;
   width: 100%;
   position: relative;
 }
 
 .donut-side-value {
   text-align: center;
-  min-width: 60px;
+  min-width: 100px;
   z-index: 10;
 }
 
 .donut-side-number {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 2.8rem;
   line-height: 1;
   margin: 0;
 }
@@ -646,7 +604,7 @@ button.button:hover {
 
 .donut-center-number {
   font-family: var(--font-display);
-  font-size: 3.5rem;
+  font-size: 5rem;
   line-height: 1;
   margin: 0;
 }
