@@ -179,3 +179,21 @@ select:focus {
   background: #FFFFFF;
 }
 
+.custom-input-container input,
+.custom-input-container textarea {
+  background-color: transparent !important;
+}
+
+/* Fix webkit autofill background */
+.custom-input-container input:-webkit-autofill,
+.custom-input-container input:-webkit-autofill:hover, 
+.custom-input-container input:-webkit-autofill:focus, 
+.custom-input-container input:-webkit-autofill:active,
+.custom-input-container textarea:-webkit-autofill,
+.custom-input-container textarea:-webkit-autofill:hover,
+.custom-input-container textarea:-webkit-autofill:focus,
+.custom-input-container textarea:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: var(--color-black) !important;
+}
+

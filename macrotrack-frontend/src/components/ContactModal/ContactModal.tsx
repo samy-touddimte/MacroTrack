@@ -62,7 +62,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </div>
 
         {success ? (
-          <div className="bg-[#ECFDF5] border-l-[3px] rounded-md p-4 text-center font-body text-sm leading-[1.4]" style={{ borderColor: 'var(--color-green)', color: 'var(--color-green)' }}>
+          <div className="bg-gray-light rounded-md p-4 text-center font-body text-sm leading-[1.4] text-black">
             <strong>Merci !</strong> Votre message a bien été envoyé.
           </div>
         ) : (
