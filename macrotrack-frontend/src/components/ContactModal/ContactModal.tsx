@@ -62,8 +62,8 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </div>
 
         {success ? (
-          <div className="bg-gray-light rounded-md p-4 text-center font-body text-sm leading-[1.4] text-black">
-            <strong>Merci !</strong> Votre message a bien été envoyé.
+          <div className="text-center font-body text-base text-black mt-4">
+            Merci ! Votre message a bien été envoyé.
           </div>
         ) : (
           <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5">
