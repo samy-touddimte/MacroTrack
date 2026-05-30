@@ -97,7 +97,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 />
               </div>
               {errors.user_name && (
-                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                <div className="bg-[#FEF2F2] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ color: 'var(--color-red)' }}>
                   {errors.user_name.message}
                 </div>
               )}
@@ -122,7 +122,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 />
               </div>
               {errors.user_email && (
-                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                <div className="bg-[#FEF2F2] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ color: 'var(--color-red)' }}>
                   {errors.user_email.message}
                 </div>
               )}
@@ -141,14 +141,14 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
                 />
               </div>
               {errors.message && (
-                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                <div className="bg-[#FEF2F2] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ color: 'var(--color-red)' }}>
                   {errors.message.message}
                 </div>
               )}
             </div>
 
             {globalError && (
-              <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2.5 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+              <div className="bg-[#FEF2F2] rounded-md p-2.5 font-body text-xs leading-[1.4] text-left" style={{ color: 'var(--color-red)' }}>
                 {globalError}
               </div>
             )}
