@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 
 interface ContactModalProps {
@@ -6,33 +7,42 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
+interface ContactForm {
+  user_name: string;
+  user_email: string;
+  message: string;
+}
+
 const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
-  const form = useRef<HTMLFormElement>(null);
   const [isSending, setIsSending] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [globalError, setGlobalError] = useState<string | null>(null);
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactForm>();
 
   if (!isOpen) return null;
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.current) return;
-
+  const onSubmit = (data: ContactForm) => {
     setIsSending(true);
-    setError(null);
+    setGlobalError(null);
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     emailjs
-      .sendForm(serviceId, templateId, form.current, {
+      .send(serviceId, templateId, {
+        user_name: data.user_name,
+        user_email: data.user_email,
+        message: data.message
+      }, {
         publicKey: publicKey,
       })
       .then(
         () => {
           setIsSending(false);
           setSuccess(true);
+          reset();
           setTimeout(() => {
             onClose();
             setSuccess(false); // reset for next time
@@ -40,7 +50,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         },
         (err) => {
           setIsSending(false);
-          setError("Une erreur est survenue lors de l'envoi du message.");
+          setGlobalError("Une erreur est survenue lors de l'envoi du message.");
           console.error('FAILED...', err.text);
         }
       );
@@ -55,18 +65,25 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-[480px] bg-white rounded-2xl p-[30px] max-h-[90vh] overflow-y-auto text-black shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex flex-col gap-[20px]"
       >
-        <div className="flex justify-between items-center">
-          <h2 className="font-display text-[2rem] text-black m-0 tracking-wide">
-            ME CONTACTER
-          </h2>
-        </div>
+        {!success && (
+          <div className="flex justify-between items-center">
+            <h2 className="font-display text-[2rem] text-black m-0 tracking-wide">
+              ME CONTACTER
+            </h2>
+          </div>
+        )}
 
         {success ? (
-          <div className="text-center font-body text-base text-black mt-4">
-            Merci ! Votre message a bien été envoyé.
+          <div className="flex flex-col items-center justify-center py-8 gap-3 text-center">
+            <h2 className="font-display text-[2.5rem] text-black m-0 tracking-wide">
+              MERCI !
+            </h2>
+            <div className="font-body text-base text-black">
+              Votre message a bien été envoyé.<br/>Je vous répondrai dans les plus brefs délais.
+            </div>
           </div>
         ) : (
-          <form ref={form} onSubmit={sendEmail} className="flex flex-col gap-5">
+          <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
             <div>
               <label className="font-body text-[0.8rem] font-medium text-black uppercase tracking-wider block mb-2">
                 NOM
@@ -74,12 +91,16 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <div className="custom-input-container">
                 <input
                   type="text"
-                  name="user_name"
-                  required
                   placeholder="Votre nom"
                   className="w-full border-none bg-transparent text-black text-base outline-none p-0 font-body"
+                  {...register('user_name', { required: "Veuillez renseigner ce champ." })}
                 />
               </div>
+              {errors.user_name && (
+                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                  {errors.user_name.message}
+                </div>
+              )}
             </div>
 
             <div>
@@ -89,12 +110,22 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <div className="custom-input-container">
                 <input
                   type="email"
-                  name="user_email"
-                  required
                   placeholder="votre@email.com"
                   className="w-full border-none bg-transparent text-black text-base outline-none p-0 font-body"
+                  {...register('user_email', { 
+                    required: "Veuillez renseigner ce champ.",
+                    pattern: {
+                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                      message: "Adresse email invalide."
+                    }
+                  })}
                 />
               </div>
+              {errors.user_email && (
+                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                  {errors.user_email.message}
+                </div>
+              )}
             </div>
 
             <div>
@@ -103,18 +134,22 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               </label>
               <div className="custom-input-container !items-start" style={{ padding: '12px' }}>
                 <textarea
-                  name="message"
-                  required
                   placeholder="Votre message..."
                   rows={4}
                   className="w-full border-none bg-transparent text-black text-base outline-none p-0 font-body resize-none"
+                  {...register('message', { required: "Veuillez renseigner ce champ." })}
                 />
               </div>
+              {errors.message && (
+                <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2 mt-2 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
+                  {errors.message.message}
+                </div>
+              )}
             </div>
 
-            {error && (
+            {globalError && (
               <div className="bg-[#FEF2F2] border-l-[3px] rounded-md p-2.5 font-body text-xs leading-[1.4] text-left" style={{ borderColor: 'var(--color-red)', color: 'var(--color-red)' }}>
-                {error}
+                {globalError}
               </div>
             )}
 
